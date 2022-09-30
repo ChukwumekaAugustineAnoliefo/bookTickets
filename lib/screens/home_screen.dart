@@ -8,6 +8,24 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffeeedf2),
+      body: ListView(
+        children: [
+          Container(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "Good morning",
+                    ),
+                    Container()
+                  ],
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
