@@ -12,11 +12,11 @@ class TicketVIew extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return SizedBox(
-      width: size.width,
+      width: size.width * 0.85,
       height: 200,
       child: Container(
         margin: const EdgeInsets.only(
-          left: 16,
+          right: 16,
         ),
         child: Column(
           children: [
@@ -121,7 +121,131 @@ class TicketVIew extends StatelessWidget {
             /*
             showing the orange part of the card
              */
+
             ,
+            Container(
+              color: Styles.orangeColor,
+              // const Color(0xfff37b67),
+              child: Row(
+                children: [
+                  const SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                      child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: LayoutBuilder(
+                        builder: (context, BoxConstraints constraints) {
+                      return Flex(
+                        direction: Axis.horizontal,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        children: List.generate(
+                          (constraints.constrainWidth() / 15).floor(),
+                          (index) => const SizedBox(
+                            width: 5,
+                            height: 1,
+                            child: DecoratedBox(
+                                decoration: BoxDecoration(color: Colors.white)),
+                          ),
+                        ),
+                      );
+                    }),
+                  )),
+                  SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Styles.orangeColor,
+                  borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(21),
+                      bottomRight: Radius.circular(21))),
+              padding: const EdgeInsets.only(
+                  left: 16, top: 10, right: 16, bottom: 16),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "1 MAY",
+                            style: Styles.headlineStyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                          Text(
+                            "DATE",
+                            style: Styles.headlineStyle4
+                                .copyWith(color: Colors.white),
+                          ),
+                          Gap(5),
+                        ],
+                      ),
+                      Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              "08:00 AM",
+                              style: Styles.headlineStyle3
+                                  .copyWith(color: Colors.white),
+                            ),
+                            Text(
+                              "Departure time",
+                              style: Styles.headlineStyle4
+                                  .copyWith(color: Colors.white),
+                            ),
+                            Gap(5),
+                          ],
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            "23",
+                            style: Styles.headlineStyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                          Text(
+                            "Number",
+                            style: Styles.headlineStyle4
+                                .copyWith(color: Colors.white),
+                          ),
+                          Gap(5),
+                        ],
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
