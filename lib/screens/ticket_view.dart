@@ -1,12 +1,13 @@
 import 'package:book_tickets/utils/app_layout.dart';
 import 'package:book_tickets/utils/app_styles.dart';
 import 'package:book_tickets/widgets/thick_container.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class TicketVIew extends StatelessWidget {
-  const TicketVIew({Key? key}) : super(key: key);
+  final Map<String, dynamic> ticketScreen;
+  const TicketVIew({Key? key, required this.ticketScreen}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class TicketVIew extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "NYC",
+                        "${ticketScreen['from']['code']}",
                         style:
                             Styles.headlineStyle3.copyWith(color: Colors.white),
                       ),
@@ -79,7 +80,7 @@ class TicketVIew extends StatelessWidget {
                       ThickContainer(),
                       const Spacer(),
                       Text(
-                        "LDN",
+                        "${ticketScreen['to']['code']}",
                         style:
                             Styles.headlineStyle3.copyWith(color: Colors.white),
                       )
@@ -92,21 +93,21 @@ class TicketVIew extends StatelessWidget {
                       SizedBox(
                         width: 100,
                         child: Text(
-                          "New-York",
+                          "${ticketScreen['from']['name']}",
                           style: Styles.headlineStyle4.copyWith(
                             color: Colors.white,
                           ),
                         ),
                       ),
                       Text(
-                        "8H 30M",
+                        "${ticketScreen['flying_time']}",
                         style:
                             Styles.headlineStyle4.copyWith(color: Colors.white),
                       ),
                       SizedBox(
                         width: 100,
                         child: Text(
-                          "London",
+                          "${ticketScreen['to']['name']}",
                           textAlign: TextAlign.end,
                           style: Styles.headlineStyle4.copyWith(
                             color: Colors.white,
@@ -195,7 +196,7 @@ class TicketVIew extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "1 MAY",
+                            "${ticketScreen['date']}",
                             style: Styles.headlineStyle3
                                 .copyWith(color: Colors.white),
                           ),
@@ -212,7 +213,7 @@ class TicketVIew extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
-                              "08:00 AM",
+                              "${ticketScreen['departure_time']}",
                               style: Styles.headlineStyle3
                                   .copyWith(color: Colors.white),
                             ),
@@ -229,7 +230,7 @@ class TicketVIew extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            "23",
+                            "${ticketScreen['number']}",
                             style: Styles.headlineStyle3
                                 .copyWith(color: Colors.white),
                           ),

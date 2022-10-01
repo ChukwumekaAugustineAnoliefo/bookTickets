@@ -3,7 +3,7 @@ import 'package:book_tickets/screens/ticket_view.dart';
 import 'package:book_tickets/utils/app_info_list.dart';
 import 'package:book_tickets/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -102,12 +102,11 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 20),
               child: Row(
-                children: [
-                  TicketVIew(),
-                  TicketVIew(),
-                  TicketVIew(),
-                  TicketVIew()
-                ],
+                children: ticketList
+                    .map(
+                      (singTicket) => TicketVIew(ticketScreen: singTicket),
+                    )
+                    .toList(),
               )),
           const Gap(15),
           Container(
