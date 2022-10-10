@@ -210,19 +210,19 @@ class TicketVIew extends StatelessWidget {
                         firsText: "${ticketScreen['date']}",
                         secondText: "DATE",
                         alignment: CrossAxisAlignment.start,
-                        isColor: false,
+                        isColor: isColor,
                       ),
                       AppColumnLayout(
                         firsText: "${ticketScreen['departure_time']}",
                         secondText: "Departure time",
                         alignment: CrossAxisAlignment.center,
-                        isColor: false,
+                        isColor: isColor,
                       ),
                       AppColumnLayout(
                         firsText: "${ticketScreen['number']}",
                         secondText: "Number",
                         alignment: CrossAxisAlignment.end,
-                        isColor: false,
+                        isColor: isColor,
                       ),
                     ],
                   )
